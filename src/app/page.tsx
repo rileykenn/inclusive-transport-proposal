@@ -24,6 +24,7 @@ import {
     Sparkles,
     ArrowRight,
     CheckCircle,
+    Instagram,
 } from "lucide-react";
 
 /* ─── Animation Variants ─── */
@@ -304,6 +305,17 @@ function Hero() {
                                 </motion.div>
                             ))}
                         </div>
+
+                        {/* Social */}
+                        <a
+                            href="https://www.instagram.com/inclusive_transport_services/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 mt-4 text-white/70 hover:text-[var(--color-primary)] transition-colors"
+                        >
+                            <Instagram size={20} />
+                            <span className="text-sm font-medium">Follow us on Instagram</span>
+                        </a>
                     </motion.div>
 
                     {/* Google Reviews — Desktop: both, Mobile: rotating single */}
