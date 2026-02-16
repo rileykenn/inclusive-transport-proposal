@@ -8,13 +8,14 @@
     --color-accent: #17252A;
     --color-accent-light: #2B7A78;
     --color-surface: #FFFFFF;
-    --color-surface-alt: #F7FDFC;
+    --color-surface-alt: #F0FAF9;
     --color-text: #17252A;
     --color-text-secondary: #3A5A5E;
     --color-text-muted: #7BA3A7;
     --color-border: #D4ECEB;
     --color-border-light: #E8F6F5;
     --color-gold: #D4A843;
+    --color-teal-glow: #5DC8C4;
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -33,6 +34,81 @@ body {
 ::selection {
     background: var(--color-primary-light);
     color: var(--color-primary-deeper);
+}
+
+/* ─── Animated gradient background ─── */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(93, 200, 196, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(93, 200, 196, 0.6);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    animation: shimmer 3s ease-in-out infinite;
 }
 
 /* Booking Calendar */
@@ -72,4 +148,9 @@ body {
 
 .calendar-day.empty:hover {
     background: transparent;
+}
+
+/* Google star color */
+.star-gold {
+    color: #FBBC04;
 }
