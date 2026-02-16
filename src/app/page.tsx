@@ -456,7 +456,7 @@ function Services() {
     return (
         <AnimatedSection
             id="services"
-            className="py-24 px-6 bg-gradient-to-b from-[var(--color-surface-alt)] to-white relative overflow-hidden"
+            className="py-24 px-6 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-primary-deeper)] relative overflow-hidden"
         >
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent" />
@@ -465,17 +465,17 @@ function Services() {
 
             <div className="max-w-7xl mx-auto relative">
                 <motion.div variants={fadeUp} className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/10 text-[var(--color-primary-deeper)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                    <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                         <Sparkles size={14} />
                         Our Services
                     </div>
-                    <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-text)] mb-4">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
                         Where Do You Want to{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-deeper)]">
+                        <span className="text-white/80">
                             Go?
                         </span>
                     </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+                    <p className="text-lg text-white/70 max-w-2xl mx-auto">
                         From airport runs to full day winery experiences. Professional,
                         comfortable transport built around your schedule.
                     </p>
@@ -498,13 +498,13 @@ function Services() {
                                     className="text-white"
                                 />
                             </div>
-                            <h3 className="text-lg font-bold text-[var(--color-text)] mb-2">
+                            <h3 className="text-xl font-extrabold text-[var(--color-text)] mb-2">
                                 {service.title}
                             </h3>
-                            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                            <p className="text-[15px] font-medium text-[var(--color-text-secondary)] leading-relaxed mb-4">
                                 {service.desc}
                             </p>
-                            <span className="inline-block text-sm font-bold text-[var(--color-primary-deeper)] bg-[var(--color-primary-light)] px-4 py-1.5 rounded-full">
+                            <span className="inline-block text-sm font-bold text-white bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] px-5 py-2 rounded-full shadow-md">
                                 {service.price}
                             </span>
                         </motion.div>
