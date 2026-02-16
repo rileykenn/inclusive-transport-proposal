@@ -464,22 +464,7 @@ function Services() {
             <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-[var(--color-primary-dark)]/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative">
-                <motion.div variants={fadeUp} className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/10 text-[var(--color-primary-deeper)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                        <Sparkles size={14} />
-                        Our Services
-                    </div>
-                    <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-text)] mb-4">
-                        Where Do You Want to{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-deeper)]">
-                            Go?
-                        </span>
-                    </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                        From airport runs to full day winery experiences. Professional,
-                        comfortable transport built around your schedule.
-                    </p>
-                </motion.div>
+                {/* Services header removed — client rethinking */}
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service) => (
