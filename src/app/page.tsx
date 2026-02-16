@@ -240,7 +240,7 @@ function Hero() {
                     </h1>
 
                     <p className="text-xl sm:text-2xl text-[var(--color-text-secondary)] leading-relaxed mb-10 max-w-2xl font-medium">
-                        Book our Premium, reliable 12 seater transport for <span className="text-[var(--color-primary-deeper)] font-bold">NDIS customers</span>, airport transfers, winery tours, Blue Mountain escapes & retreats. Travel comfortably and stress free with our professional service, chauffeured by our hand-picked drivers.
+                        Book our Premium, reliable 12 seater transport for <span className="text-[var(--color-primary-deeper)] font-bold">NDIS customers</span>, airport transfers, winery tours, Blue Mountains escapes & retreats. Travel comfortably and stress free with our professional service, chauffeured by our hand-picked drivers.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
