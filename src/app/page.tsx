@@ -27,7 +27,7 @@ import {
 /* ─── Animation Variants ─── */
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 const fadeIn = {
@@ -740,15 +740,15 @@ function BookingSection() {
                                             key={s.id}
                                             onClick={() => setSelectedService(s.id)}
                                             className={`w-full text-left px-4 py-3.5 rounded-xl border transition-all flex justify-between items-center ${selectedService === s.id
-                                                    ? "border-[var(--color-primary)] bg-[var(--color-primary-light)] text-[var(--color-primary-deeper)]"
-                                                    : "border-[var(--color-border)] hover:border-[var(--color-primary)]/30 text-[var(--color-text-secondary)]"
+                                                ? "border-[var(--color-primary)] bg-[var(--color-primary-light)] text-[var(--color-primary-deeper)]"
+                                                : "border-[var(--color-border)] hover:border-[var(--color-primary)]/30 text-[var(--color-text-secondary)]"
                                                 }`}
                                         >
                                             <span className="font-medium text-sm">{s.label}</span>
                                             <span
                                                 className={`text-xs font-bold ${selectedService === s.id
-                                                        ? "text-[var(--color-primary-deeper)]"
-                                                        : "text-[var(--color-text-muted)]"
+                                                    ? "text-[var(--color-primary-deeper)]"
+                                                    : "text-[var(--color-text-muted)]"
                                                     }`}
                                             >
                                                 {s.price}
