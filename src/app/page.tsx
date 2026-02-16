@@ -93,16 +93,16 @@ function Navbar() {
                     <Image
                         src="/images/logo-blue.png"
                         alt="Inclusive Ability Support"
-                        width={40}
-                        height={40}
-                        className="w-10 h-10"
+                        width={45}
+                        height={45}
+                        className="w-11 h-11"
                     />
                     <div className="hidden sm:block">
                         <span className="text-base font-bold text-[var(--color-text)] leading-tight block">
-                            Inclusive Ability
+                            Beni Brown's
                         </span>
-                        <span className="text-[11px] uppercase tracking-[1.5px] text-[var(--color-primary-deeper)] font-semibold">
-                            Support
+                        <span className="text-sm font-extrabold text-[var(--color-primary-deeper)] tracking-tight">
+                            Inclusive Ability Support
                         </span>
                     </div>
                 </a>
@@ -173,15 +173,22 @@ function Hero() {
     return (
         <section className="relative min-h-screen flex items-center pt-[72px]">
             {/* Background */}
-            <div className="absolute inset-0">
-                <Image
-                    src="/images/winery-van.jpeg"
-                    alt="Inclusive Transport Services van at a winery"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30" />
+            <div className="absolute inset-0 overflow-hidden">
+                <motion.div
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1.05 }}
+                    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+                    className="absolute inset-0"
+                >
+                    <Image
+                        src="/images/winery-van.jpeg"
+                        alt="Inclusive Transport Services van at a winery"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-[var(--color-primary-light)]/30" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-0">
@@ -189,23 +196,51 @@ function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="max-w-2xl"
+                    className="max-w-3xl"
                 >
-                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary-light)] text-[var(--color-primary-deeper)] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                        <Shield size={16} />
-                        Fully Insured · Professional Service
-                    </div>
+                    {/* Google Reviews */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="flex flex-col sm:flex-row gap-4 mb-8"
+                    >
+                        <div className="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-[var(--color-primary)]/20 flex gap-3 items-start max-w-sm transform hover:scale-105 transition-transform duration-300">
+                            <div className="bg-white p-1.5 rounded-full shrink-0 border border-gray-100 shadow-sm flex items-center justify-center w-8 h-8">
+                                <span className="text-sm font-bold text-gray-800">G</span>
+                            </div>
+                            <div>
+                                <div className="flex text-yellow-400 mb-1">
+                                    {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} fill="currentColor" />)}
+                                </div>
+                                <p className="text-xs font-medium text-gray-800 leading-snug">"Beni provided absolutely amazing service. The van was pristine and he was so helpful with our wheelchair needs."</p>
+                                <p className="text-[10px] text-gray-500 mt-1 font-bold">- Sarah J.</p>
+                            </div>
+                        </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--color-text)] leading-[1.1] mb-6">
+                        <div className="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-[var(--color-primary)]/20 flex gap-3 items-start max-w-sm transform hover:scale-105 transition-transform duration-300 hidden sm:flex">
+                            <div className="bg-white p-1.5 rounded-full shrink-0 border border-gray-100 shadow-sm flex items-center justify-center w-8 h-8">
+                                <span className="text-sm font-bold text-gray-800">G</span>
+                            </div>
+                            <div>
+                                <div className="flex text-yellow-400 mb-1">
+                                    {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} fill="currentColor" />)}
+                                </div>
+                                <p className="text-xs font-medium text-gray-800 leading-snug">"Best winery tour we've ever had! Relaxing, professional, and Beni knew all the best spots."</p>
+                                <p className="text-[10px] text-gray-500 mt-1 font-bold">- Michael T.</p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--color-text)] leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
                         Your Journey,{" "}
-                        <span className="text-[var(--color-primary-dark)]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary-dark)] to-[var(--color-primary)]">
                             Our Priority
                         </span>
                     </h1>
 
-                    <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-8 max-w-lg">
-                        From airport transfers to winery tours and Blue Mountains escapes.
-                        Small group transport that puts comfort and experience first.
+                    <p className="text-xl sm:text-2xl text-[var(--color-text-secondary)] leading-relaxed mb-10 max-w-2xl font-medium">
+                        Book our Premium, reliable 12 seater transport for <span className="text-[var(--color-primary-deeper)] font-bold">NDIS customers</span>, airport transfers, winery tours, Blue Mountain escapes & retreats. Travel comfortably and stress free with our professional service, chauffeured by our hand-picked drivers.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -256,6 +291,13 @@ function Hero() {
 function Services() {
     const services = [
         {
+            icon: Heart,
+            title: "NDIS Transport",
+            desc: "Supportive and professional transport services for NDIS participants. Safe, comfortable rides to appointments and community activities.",
+            price: "NDIS Funded",
+            highlight: true,
+        },
+        {
             icon: Plane,
             title: "Airport Transfers",
             desc: "Comfortable door to door airport transfers from $90 per person. Reliable pickups and drop offs for all major airports.",
@@ -285,12 +327,6 @@ function Services() {
             desc: "Comfortable group transport for corporate events, festivals, parties, and special occasions. Flexible scheduling and routes.",
             price: "Custom Quote",
         },
-        {
-            icon: Heart,
-            title: "NDIS Transport",
-            desc: "Supportive and professional transport services for NDIS participants. Safe, comfortable rides to appointments and community activities.",
-            price: "NDIS Funded",
-        },
     ];
 
     return (
@@ -317,9 +353,20 @@ function Services() {
                         <motion.div
                             key={service.title}
                             variants={fadeUp}
-                            whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                            className="bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 hover:shadow-xl transition-all duration-300 group"
+                            whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.2 } }}
+                            className={`rounded-2xl p-8 border-2 transition-all duration-300 group shadow-lg hover:shadow-2xl relative overflow-hidden ${
+                                // @ts-ignore
+                                service.highlight
+                                    ? "bg-gradient-to-br from-white to-[var(--color-primary-light)] border-[var(--color-primary)]"
+                                    : "bg-white border-transparent hover:border-[var(--color-primary)]/30"
+                                }`}
                         >
+                            {/* @ts-ignore */}
+                            {service.highlight && (
+                                <div className="absolute top-0 right-0 bg-[var(--color-primary)] text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                                    Most Popular
+                                </div>
+                            )}
                             <div className="w-12 h-12 rounded-xl bg-[var(--color-primary-light)] flex items-center justify-center mb-5 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
                                 <service.icon
                                     size={22}
