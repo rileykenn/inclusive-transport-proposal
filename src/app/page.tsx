@@ -1126,7 +1126,7 @@ export default function Home() {
         <>
             <Navbar />
             <Hero />
-            <Services />
+            {/* <Services /> — removed while client rethinks */}
             <FeaturedTours />
             <WinerySpotlight />
             <About />
