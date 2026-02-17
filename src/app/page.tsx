@@ -25,6 +25,7 @@ import {
     ArrowRight,
     CheckCircle,
     Instagram,
+    Briefcase,
 } from "lucide-react";
 
 /* ─── Animation Variants ─── */
@@ -422,46 +423,39 @@ function Hero() {
 function Services() {
     const services = [
         {
-            icon: Heart,
-            title: "NDIS Transport",
-            desc: "Supportive and professional transport services for NDIS participants. Safe, comfortable rides to appointments and community activities.",
-            price: "NDIS Funded",
-            gradient: "from-rose-400 to-pink-500",
-        },
-        {
             icon: Plane,
             title: "Airport Transfers",
-            desc: "Comfortable door to door airport transfers from $90 per person. Reliable pickups and drop offs for all major airports.",
+            desc: "Door to door airport pick up or drop off for individuals and groups. Reliable, comfortable rides to and from all major airports.",
             price: "From $90pp",
             gradient: "from-blue-400 to-indigo-500",
         },
         {
             icon: Wine,
-            title: "Wine & Brewery Tours",
-            desc: "Full and half day wine and brewery tours through stunning regional estates. Cellar door tastings, lunch, and scenic drives included.",
+            title: "Winery & Brewery Tours",
+            desc: "Return transport to local wineries or breweries with time for tastings and lunch. Half day or full day options available.",
             price: "From $150pp",
             gradient: "from-purple-400 to-violet-500",
         },
         {
             icon: Mountain,
-            title: "Blue Mountains Day Trips",
-            desc: "Reconnect with nature on a full day Blue Mountains escape. Scenic lookouts, guided bush walks, cafe lunch, and village strolls.",
-            price: "From $199pp",
+            title: "Blue Mountains Day Trip",
+            desc: "Scenic nature day trip with bushwalks, lookouts, and cafe stops. Reconnect with nature on a full day escape.",
+            price: "From $180pp",
             gradient: "from-emerald-400 to-teal-500",
         },
         {
-            icon: Compass,
-            title: "Crooked River Winery Estate",
-            desc: "An all inclusive 5 hour winery experience. Cellar door tasting, seated lunch with wine, and time to explore the estate.",
-            price: "$250pp All Inclusive",
+            icon: Briefcase,
+            title: "Corporate Team Building Transport",
+            desc: "Transport for corporate retreats, conferences, and off-site events. Flexible scheduling with hourly or custom quotes.",
+            price: "From $150/hr",
             gradient: "from-amber-400 to-orange-500",
         },
         {
-            icon: Users,
-            title: "Group Transport",
-            desc: "Comfortable group transport for corporate events, festivals, parties, and special occasions. Flexible scheduling and routes.",
-            price: "Custom Quote",
-            gradient: "from-cyan-400 to-teal-500",
+            icon: Heart,
+            title: "NDIS Transport Services",
+            desc: "Reliable transport for NDIS participants to appointments and community activities. In line with NDIS pricing guidelines.",
+            price: "NDIS Pricing",
+            gradient: "from-rose-400 to-pink-500",
         },
     ];
 
@@ -476,7 +470,21 @@ function Services() {
             <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-[var(--color-primary-dark)]/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative">
-                {/* Services header removed — client rethinking */}
+                <motion.div variants={fadeUp} className="text-center mb-16">
+                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/10 text-[var(--color-primary-deeper)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <Sparkles size={14} />
+                        Our Services
+                    </div>
+                    <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-text)] mb-4">
+                        What We{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-deeper)]">
+                            Offer
+                        </span>
+                    </h2>
+                    <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+                        Premium transport for every occasion. Professional drivers, comfortable vehicles, and a service built around you.
+                    </p>
+                </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service) => (
@@ -1138,7 +1146,7 @@ export default function Home() {
         <>
             <Navbar />
             <Hero />
-            {/* <Services /> — removed while client rethinks */}
+            <Services />
             <FeaturedTours />
             <WinerySpotlight />
             <About />
