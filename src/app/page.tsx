@@ -138,7 +138,7 @@ function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="#booking"
+                        href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
                         className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-[var(--color-primary)]/20 hover:shadow-xl hover:shadow-[var(--color-primary)]/30"
                     >
                         Book Now
@@ -177,7 +177,7 @@ function Navbar() {
                             </a>
                         ))}
                         <a
-                            href="#booking"
+                            href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
                             onClick={() => setOpen(false)}
                             className="block mt-3 text-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white px-5 py-3 rounded-full font-semibold"
                         >
@@ -216,59 +216,85 @@ function Hero() {
         return () => clearInterval(timer);
     }, [reviews.length]);
 
+    const heroImages = [
+        { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers" },
+        { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours" },
+        { src: "/images/blue-mountains.jpeg", alt: "Blue Mountains Day Trip", label: "Blue Mountains" },
+    ];
+
     return (
-        <section className="relative min-h-screen flex items-center pt-[72px] overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-                <Image
-                    src="/images/winery-van.jpeg"
-                    alt="Inclusive Transport Services van at a winery"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                {/* Vibrant teal gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/90 via-[var(--color-primary-deeper)]/70 to-[var(--color-primary)]/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-accent)]/60 via-transparent to-transparent" />
-            </div>
-
-            {/* Animated floating circles */}
+        <section className="relative pt-[72px] overflow-hidden bg-gradient-to-b from-[var(--color-accent)] via-[var(--color-accent)] to-[var(--color-surface-alt)]">
+            {/* Subtle background decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[var(--color-primary)]/10 blur-3xl float-animation" />
-                <div className="absolute bottom-20 left-[5%] w-48 h-48 rounded-full bg-[var(--color-primary)]/15 blur-2xl float-animation" style={{ animationDelay: "2s" }} />
-                <div className="absolute top-[40%] right-[30%] w-32 h-32 rounded-full bg-[var(--color-primary-dark)]/10 blur-2xl float-animation" style={{ animationDelay: "1s" }} />
+                <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[var(--color-primary)]/8 blur-3xl float-animation" />
+                <div className="absolute bottom-20 left-[5%] w-48 h-48 rounded-full bg-[var(--color-primary)]/10 blur-2xl float-animation" style={{ animationDelay: "2s" }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-0 w-full">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
+                {/* 3 Images at the top */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                    className="grid grid-cols-3 gap-3 sm:gap-5 pt-8 sm:pt-12"
+                >
+                    {heroImages.map((img, i) => (
+                        <motion.div
+                            key={img.label}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+                            className="relative group cursor-pointer"
+                        >
+                            <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border-2 border-white/10 group-hover:border-[var(--color-primary)]/50 transition-all duration-500">
+                                <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5">
+                                    <p className="text-white font-bold text-xs sm:text-sm md:text-base drop-shadow-lg">
+                                        {img.label}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+                {/* Hero Text Content */}
+                <div className="text-center py-12 sm:py-16 lg:py-20">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/20 backdrop-blur-sm text-[var(--color-primary-light)] px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-[var(--color-primary)]/30">
+                        <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/15 text-[var(--color-primary-light)] px-5 py-2.5 rounded-full text-sm font-semibold mb-6 border border-[var(--color-primary)]/25">
                             <Sparkles size={16} />
                             Premium 12 Seater Transport
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
                             Your Journey,{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]">
                                 Our Priority
                             </span>
                         </h1>
 
-                        <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+                        <p className="text-lg sm:text-xl text-white/75 leading-relaxed mb-10 max-w-2xl mx-auto">
                             Book our premium, reliable 12 seater transport for NDIS customers, airport
                             transfers, winery tours, Blue Mountain escapes and more. Travel comfortably
-                            and stress free with our professional service and be chauffeured by our
-                            hand picked drivers.
+                            and stress free with our professional service.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="#booking"
+                                href="https://inclusivetransport.rezdy.com/catalog/641233/tours"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-[var(--color-primary)]/30 hover:shadow-2xl hover:shadow-[var(--color-primary)]/40 shimmer-effect"
                             >
                                 <Calendar size={18} />
@@ -277,76 +303,73 @@ function Hero() {
                             </a>
                             <a
                                 href="tel:0402503701"
-                                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
+                                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/25 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
                             >
                                 <Phone size={18} />
                                 0402 503 701
                             </a>
                         </div>
+                    </motion.div>
 
-                        {/* Trust Badges */}
-                        <div className="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/15">
-                            {[
-                                { icon: Shield, text: "Fully Insured" },
-                                { icon: Users, text: "Group Specialists" },
-                                { icon: Star, text: "5 Star Rated" },
-                            ].map((badge, i) => (
-                                <motion.div
-                                    key={badge.text}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.8 + i * 0.15 }}
-                                    className="flex items-center gap-2 text-sm text-white/70"
-                                >
-                                    <badge.icon
-                                        size={16}
-                                        className="text-[var(--color-primary)]"
-                                    />
-                                    <span className="font-medium">{badge.text}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        {/* Social */}
+                    {/* Trust Badges */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10 pt-8 border-t border-white/10"
+                    >
+                        {[
+                            { icon: Shield, text: "Fully Insured" },
+                            { icon: Users, text: "Group Specialists" },
+                            { icon: Star, text: "5 Star Rated" },
+                        ].map((badge) => (
+                            <div
+                                key={badge.text}
+                                className="flex items-center gap-2 text-sm text-white/60"
+                            >
+                                <badge.icon size={16} className="text-[var(--color-primary)]" />
+                                <span className="font-medium">{badge.text}</span>
+                            </div>
+                        ))}
                         <a
                             href="https://www.instagram.com/inclusive_transport_services/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 mt-4 text-white/70 hover:text-[var(--color-primary)] transition-colors"
+                            className="flex items-center gap-2 text-sm text-white/60 hover:text-[var(--color-primary)] transition-colors"
                         >
-                            <Instagram size={20} />
-                            <span className="text-sm font-medium">Follow us on Instagram</span>
+                            <Instagram size={16} />
+                            <span className="font-medium">Follow us</span>
                         </a>
                     </motion.div>
 
-                    {/* Google Reviews — Desktop: both, Mobile: rotating single */}
+                    {/* Google Reviews */}
                     <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="flex flex-col gap-5 mt-8 lg:mt-0"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.0 }}
+                        className="mt-12 max-w-3xl mx-auto"
                     >
-                        {/* Google Reviews Header */}
-                        <div className="flex items-center gap-3 mb-2">
+                        {/* Stars Header */}
+                        <div className="flex items-center justify-center gap-3 mb-5">
                             <div className="flex">
                                 {[...Array(5)].map((_, i) => (
                                     <Star key={i} size={20} className="star-gold fill-[#FBBC04]" />
                                 ))}
                             </div>
-                            <span className="text-white/80 text-sm font-medium">
+                            <span className="text-white/70 text-sm font-medium">
                                 5.0 on Google Reviews
                             </span>
                         </div>
 
-                        {/* Desktop: show all reviews */}
-                        <div className="hidden lg:flex flex-col gap-5">
+                        {/* Desktop: show both reviews */}
+                        <div className="hidden sm:grid grid-cols-2 gap-4">
                             {reviews.map((review, i) => (
                                 <motion.div
                                     key={review.name}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.7 + i * 0.2 }}
-                                    className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 hover:bg-white/15 transition-all duration-300"
+                                    transition={{ delay: 1.1 + i * 0.2 }}
+                                    className="bg-white/8 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:bg-white/12 transition-all duration-300 text-left"
                                 >
                                     <div className="flex items-center gap-3 mb-3">
                                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] flex items-center justify-center text-white font-bold text-sm">
@@ -362,7 +385,7 @@ function Hero() {
                                         </div>
                                         <svg className="ml-auto w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
                                     </div>
-                                    <p className="text-white/80 text-sm leading-relaxed italic">
+                                    <p className="text-white/75 text-sm leading-relaxed italic">
                                         &ldquo;{review.text}&rdquo;
                                     </p>
                                 </motion.div>
@@ -370,7 +393,7 @@ function Hero() {
                         </div>
 
                         {/* Mobile: rotating single review */}
-                        <div className="lg:hidden relative min-h-[140px]">
+                        <div className="sm:hidden relative min-h-[140px]">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeReview}
@@ -378,7 +401,7 @@ function Hero() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.4 }}
-                                    className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15"
+                                    className="bg-white/8 backdrop-blur-md rounded-2xl p-5 border border-white/10 text-left"
                                 >
                                     <div className="flex items-center gap-3 mb-3">
                                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] flex items-center justify-center text-white font-bold text-sm">
@@ -394,12 +417,11 @@ function Hero() {
                                         </div>
                                         <svg className="ml-auto w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
                                     </div>
-                                    <p className="text-white/80 text-sm leading-relaxed italic">
+                                    <p className="text-white/75 text-sm leading-relaxed italic">
                                         &ldquo;{reviews[activeReview].text}&rdquo;
                                     </p>
                                 </motion.div>
                             </AnimatePresence>
-                            {/* Dots indicator */}
                             <div className="flex justify-center gap-2 mt-3">
                                 {reviews.map((_, i) => (
                                     <button
@@ -633,7 +655,7 @@ function FeaturedTours() {
                                 </ul>
 
                                 <a
-                                    href="#booking"
+                                    href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white py-3 rounded-xl font-semibold transition-all text-sm shadow-md"
                                 >
                                     Book This Experience
@@ -740,7 +762,7 @@ function WinerySpotlight() {
                         </div>
 
                         <a
-                            href="#booking"
+                            href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-[var(--color-primary)]/20"
                         >
                             <Calendar size={18} />
