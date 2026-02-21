@@ -1156,9 +1156,6 @@ function Footer() {
                         © 2026 Inclusive Ability Support. All rights reserved.
                     </p>
                     <p className="text-sm text-gray-500">
-                        www.inclusivetransport.com.au
-                    </p>
-                    <p className="text-sm text-gray-500">
                         Website designed and developed by{" "}
                         <a
                             href="https://rileytechstudio.com.au"
