@@ -1158,6 +1158,17 @@ function Footer() {
                     <p className="text-sm text-gray-500">
                         www.inclusivetransport.com.au
                     </p>
+                    <p className="text-sm text-gray-500">
+                        Website designed and developed by{" "}
+                        <a
+                            href="https://rileytechstudio.com.au"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[var(--color-primary)] hover:text-[var(--color-primary-light)] transition-colors"
+                        >
+                            Riley Tech Studio
+                        </a>
+                    </p>
                 </motion.div>
             </div>
         </AnimatedSection>
