@@ -230,13 +230,13 @@ function Hero() {
                 <div className="absolute bottom-20 left-[5%] w-48 h-48 rounded-full bg-[var(--color-primary)]/10 blur-2xl float-animation" style={{ animationDelay: "2s" }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 sm:pb-16">
                 {/* 3 Images */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="grid grid-cols-3 gap-3 sm:gap-5 pt-8 sm:pt-12"
+                    className="grid grid-cols-3 gap-2 sm:gap-5 pt-6 sm:pt-10"
                 >
                     {heroImages.map((img, i) => (
                         <motion.div
@@ -266,7 +266,7 @@ function Hero() {
                 </motion.div>
 
                 {/* Heading + Description + CTAs */}
-                <div className="text-center mt-12 sm:mt-16">
+                <div className="text-center mt-8 sm:mt-14">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -277,14 +277,14 @@ function Hero() {
                             Premium 12 Seater Transport
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
+                        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6">
                             Your Journey,{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]">
                                 Our Priority
                             </span>
                         </h1>
 
-                        <p className="text-lg sm:text-xl text-white/75 leading-relaxed mb-10 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-xl text-white/75 leading-relaxed mb-6 sm:mb-10 max-w-2xl mx-auto">
                             Book our premium, reliable 12 seater transport for NDIS customers, airport
                             transfers, winery tours, Blue Mountain escapes and more. Travel comfortably
                             and stress free with our professional service.
@@ -483,7 +483,7 @@ function Services() {
     return (
         <AnimatedSection
             id="services"
-            className="py-24 px-6 bg-gradient-to-b from-[var(--color-surface-alt)] to-white relative overflow-hidden"
+            className="py-12 sm:py-16 px-6 bg-gradient-to-b from-[var(--color-surface-alt)] to-white relative overflow-hidden"
         >
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent" />
@@ -588,7 +588,7 @@ function FeaturedTours() {
     ];
 
     return (
-        <AnimatedSection id="tours" className="py-24 px-6 bg-gradient-to-b from-white to-[var(--color-surface-alt)] relative overflow-hidden">
+        <AnimatedSection id="tours" className="py-12 sm:py-16 px-6 bg-gradient-to-b from-white to-[var(--color-surface-alt)] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[var(--color-primary)]/5 blur-[100px]" />
 
             <div className="max-w-7xl mx-auto relative">
@@ -685,7 +685,7 @@ function WinerySpotlight() {
 
     return (
         <AnimatedSection
-            className="py-24 px-6 bg-gradient-to-br from-[var(--color-accent)] via-[#1a3a3a] to-[var(--color-accent)] relative overflow-hidden"
+            className="py-12 sm:py-16 px-6 bg-gradient-to-br from-[var(--color-accent)] via-[#1a3a3a] to-[var(--color-accent)] relative overflow-hidden"
         >
             {/* Decorative glows */}
             <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[var(--color-primary)]/8 blur-[100px]" />
@@ -809,7 +809,7 @@ function About() {
     return (
         <AnimatedSection
             id="about"
-            className="py-24 px-6 bg-gradient-to-b from-[var(--color-surface-alt)] to-white relative overflow-hidden"
+            className="py-12 sm:py-16 px-6 bg-gradient-to-b from-[var(--color-surface-alt)] to-white relative overflow-hidden"
         >
             <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-[var(--color-primary)]/5 blur-[100px]" />
 
@@ -918,7 +918,7 @@ function BookingSection() {
     });
 
     return (
-        <AnimatedSection id="booking" className="py-24 px-6 bg-white">
+        <AnimatedSection id="booking" className="py-12 sm:py-16 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
                 <motion.div variants={fadeUp} className="text-center mb-16">
                     <p className="text-xs uppercase tracking-[2px] text-[var(--color-primary-deeper)] font-bold mb-3">
@@ -1031,9 +1031,14 @@ function BookingSection() {
                                     </div>
                                 </div>
 
-                                <button className="w-full mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white py-3.5 rounded-xl font-bold text-sm transition-all">
+                                <a
+                                    href="https://inclusivetransport.rezdy.com/catalog/641233/tours"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white py-3.5 rounded-xl font-bold text-sm transition-all text-center"
+                                >
                                     Continue Booking →
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
