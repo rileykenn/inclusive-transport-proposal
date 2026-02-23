@@ -28,6 +28,14 @@ export const metadata: Metadata = {
             "Professional transport services including wine tours, airport transfers, Blue Mountains day trips, and NDIS transport.",
         url: "https://inclusivetransport.com.au",
         type: "website",
+        images: [
+            {
+                url: "https://inclusivetransport.com.au/images/logo-blue.png",
+                width: 512,
+                height: 512,
+                alt: "Inclusive Ability Support Logo",
+            },
+        ],
     },
 };
 

@@ -26,6 +26,8 @@ import {
     CheckCircle,
     Instagram,
     Briefcase,
+    Accessibility,
+    Copy,
 } from "lucide-react";
 
 /* ─── Animation Variants ─── */
@@ -53,10 +55,12 @@ function AnimatedSection({
     children,
     className = "",
     id,
+    style,
 }: {
     children: React.ReactNode;
     className?: string;
     id?: string;
+    style?: React.CSSProperties;
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -69,6 +73,7 @@ function AnimatedSection({
             animate={isInView ? "visible" : "hidden"}
             variants={stagger}
             className={className}
+            style={style}
         >
             {children}
         </motion.section>
@@ -92,7 +97,6 @@ function Navbar() {
         { label: "Services", href: "#services" },
         { label: "Tours", href: "#tours" },
         { label: "About", href: "#about" },
-        { label: "Booking", href: "#booking" },
         { label: "Contact", href: "#contact" },
     ];
 
@@ -138,10 +142,10 @@ function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
+                        href="/services"
                         className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-[var(--color-primary)]/20 hover:shadow-xl hover:shadow-[var(--color-primary)]/30"
                     >
-                        Book Now
+                        Our Services
                     </a>
                 </div>
 
@@ -177,11 +181,11 @@ function Navbar() {
                             </a>
                         ))}
                         <a
-                            href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
+                            href="/services"
                             onClick={() => setOpen(false)}
                             className="block mt-3 text-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white px-5 py-3 rounded-full font-semibold"
                         >
-                            Book Now
+                            Our Services
                         </a>
                     </motion.div>
                 )}
@@ -219,11 +223,11 @@ function Hero() {
     const heroImages = [
         { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers" },
         { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours" },
-        { src: "/images/blue-mountains.jpeg", alt: "Blue Mountains Day Trip", label: "Blue Mountains" },
+        { src: "/images/ndis-van.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport" },
     ];
 
     return (
-        <section className="relative pt-[72px] overflow-hidden bg-[var(--color-accent)]">
+        <section className="relative pt-[72px] overflow-hidden" style={{ background: '#142524' }}>
             {/* Subtle floating orbs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[var(--color-primary)]/8 blur-3xl float-animation" />
@@ -292,9 +296,7 @@ function Hero() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="https://inclusivetransport.rezdy.com/catalog/641233/tours"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/services"
                                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-[var(--color-primary)]/30 hover:shadow-2xl hover:shadow-[var(--color-primary)]/40 shimmer-effect"
                             >
                                 <Calendar size={18} />
@@ -439,44 +441,69 @@ function Hero() {
 }
 
 /* ═════════════════════════════
-   SERVICES
+   SERVICES — Image-based cards
    ═════════════════════════════ */
 function Services() {
     const services = [
         {
-            icon: Plane,
-            title: "Airport Transfers",
-            desc: "Door to door airport pick up or drop off for individuals and groups. Reliable, comfortable rides to and from all major airports.",
-            price: "From $90pp",
-            gradient: "from-blue-400 to-indigo-500",
-        },
-        {
-            icon: Wine,
-            title: "Winery & Brewery Tours",
-            desc: "Return transport to local wineries or breweries with time for tastings and lunch. Half day or full day options available.",
-            price: "From $150pp",
-            gradient: "from-purple-400 to-violet-500",
-        },
-        {
-            icon: Mountain,
-            title: "Blue Mountains Day Trip",
-            desc: "Scenic nature day trip with bushwalks, lookouts, and cafe stops. Reconnect with nature on a full day escape.",
-            price: "From $180pp",
-            gradient: "from-emerald-400 to-teal-500",
-        },
-        {
-            icon: Briefcase,
-            title: "Corporate Team Building Transport",
-            desc: "Transport for corporate retreats, conferences, and off-site events. Flexible scheduling with hourly or custom quotes.",
-            price: "From $150/hr",
-            gradient: "from-amber-400 to-orange-500",
-        },
-        {
-            icon: Heart,
+            image: "/images/ndis-van.jpeg",
             title: "NDIS Transport Services",
-            desc: "Reliable transport for NDIS participants to appointments and community activities. In line with NDIS pricing guidelines.",
-            price: "NDIS Pricing",
-            gradient: "from-rose-400 to-pink-500",
+            subtitle: "Community & Appointments",
+            color: "from-rose-500 to-pink-600",
+            features: [
+                "Reliable transport for NDIS participants",
+                "Appointments and community activities",
+                "In line with NDIS pricing guidelines",
+                "Comfortable, accessible vehicle",
+            ],
+        },
+        {
+            image: "/images/wine-tours.jpeg",
+            title: "Wine & Brewery Tours",
+            subtitle: "Full & Half Day",
+            color: "from-purple-500 to-violet-600",
+            features: [
+                "Cellar door wine tasting",
+                "Scenic coastal and country drives",
+                "Multiple winery and brewery stops",
+                "Small group, comfortable travel",
+            ],
+        },
+        {
+            image: "/images/blue-mountains.jpeg",
+            title: "Blue Mountains Day Trip",
+            subtitle: "Full Day Experience",
+            color: "from-emerald-500 to-teal-600",
+            features: [
+                "Scenic lookouts and grounding stops",
+                "Guided bush walk through nature",
+                "Cafe lunch in Leura or Katoomba",
+                "Village stroll through shops and gardens",
+            ],
+        },
+        {
+            image: "/images/airport-transfer.jpeg",
+            title: "Airport Transfers",
+            subtitle: "Door to Door",
+            color: "from-blue-500 to-indigo-600",
+            features: [
+                "All major airports covered",
+                "Reliable pickup and drop off",
+                "Flight tracking for peace of mind",
+                "Comfortable group vehicle",
+            ],
+        },
+        {
+            image: "/images/hero-transport.jpg",
+            title: "Corporate Transport",
+            subtitle: "Events & Team Building",
+            color: "from-amber-500 to-orange-600",
+            features: [
+                "Corporate retreats and conferences",
+                "Flexible scheduling and custom routes",
+                "Professional, punctual service",
+                "Comfortable 12 seater vehicle",
+            ],
         },
     ];
 
@@ -507,32 +534,55 @@ function Services() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
                         <motion.div
                             key={service.title}
                             variants={fadeUp}
-                            whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.2 } }}
-                            className="bg-white rounded-2xl p-8 border-2 border-[var(--color-primary)]/50 hover:border-[var(--color-primary)] hover:shadow-2xl hover:shadow-[var(--color-primary)]/10 transition-all duration-300 group relative overflow-hidden"
+                            whileHover={{ y: -6 }}
+                            className="bg-white rounded-2xl border border-[var(--color-border)] overflow-hidden hover:shadow-2xl hover:shadow-[var(--color-primary)]/10 transition-all duration-300 group"
                         >
-                            {/* Top gradient accent */}
-                            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
-
-                            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                <service.icon
-                                    size={24}
-                                    className="text-white"
+                            <div className="relative h-52 overflow-hidden">
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                <div className={`absolute top-3 right-3 bg-gradient-to-r ${service.color} px-2.5 py-1 rounded-full shadow-lg`}>
+                                    <span className="text-[11px] font-bold text-white">Contact for quote</span>
+                                </div>
                             </div>
-                            <h3 className="text-xl font-extrabold text-[var(--color-text)] mb-2">
-                                {service.title}
-                            </h3>
-                            <p className="text-[15px] font-medium text-[var(--color-text-secondary)] leading-relaxed mb-4">
-                                {service.desc}
-                            </p>
-                            <span className="inline-block text-sm font-bold text-white bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] px-5 py-2 rounded-full shadow-md">
-                                {service.price}
-                            </span>
+
+                            <div className="p-6">
+                                <p className="text-xs uppercase tracking-wider text-[var(--color-primary-dark)] font-semibold mb-1">
+                                    {service.subtitle}
+                                </p>
+                                <h3 className="text-xl font-bold text-[var(--color-text)] mb-4">
+                                    {service.title}
+                                </h3>
+
+                                <ul className="space-y-2.5 mb-6">
+                                    {service.features.map((f) => (
+                                        <li
+                                            key={f}
+                                            className="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]"
+                                        >
+                                            <CheckCircle size={16} className="text-[var(--color-primary)] mt-0.5 shrink-0" />
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <a
+                                    href="/services"
+                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white py-3 rounded-xl font-semibold transition-all text-sm shadow-md"
+                                >
+                                    Get a Quote
+                                    <ArrowRight size={16} />
+                                </a>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
@@ -547,10 +597,21 @@ function Services() {
 function FeaturedTours() {
     const tours = [
         {
+            image: "/images/ndis-van.jpeg",
+            title: "NDIS Transport",
+            subtitle: "Community & Appointments",
+            color: "from-rose-500 to-pink-600",
+            features: [
+                "Reliable transport for NDIS participants",
+                "Appointments and community activities",
+                "In line with NDIS pricing guidelines",
+                "Comfortable, accessible vehicle",
+            ],
+        },
+        {
             image: "/images/wine-tours.jpeg",
             title: "Wine & Brewery Tours",
             subtitle: "Full & Half Day",
-            price: "From $150",
             color: "from-purple-500 to-violet-600",
             features: [
                 "Cellar door wine tasting",
@@ -563,7 +624,6 @@ function FeaturedTours() {
             image: "/images/blue-mountains.jpeg",
             title: "Blue Mountains Reset Day",
             subtitle: "Full Day Experience",
-            price: "From $199",
             color: "from-emerald-500 to-teal-600",
             features: [
                 "Scenic lookouts and grounding stops",
@@ -576,7 +636,6 @@ function FeaturedTours() {
             image: "/images/airport-transfer.jpeg",
             title: "Airport Transfers",
             subtitle: "Door to Door",
-            price: "From $90",
             color: "from-blue-500 to-indigo-600",
             features: [
                 "All major airports covered",
@@ -625,11 +684,8 @@ function FeaturedTours() {
                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                <div className={`absolute top-4 right-4 bg-gradient-to-r ${tour.color} px-3 py-1.5 rounded-full shadow-lg`}>
-                                    <span className="text-sm font-bold text-white">
-                                        {tour.price}
-                                        <span className="text-xs font-medium opacity-80"> /person</span>
-                                    </span>
+                                <div className={`absolute top-3 right-3 bg-gradient-to-r ${tour.color} px-2.5 py-1 rounded-full shadow-lg`}>
+                                    <span className="text-[11px] font-bold text-white">Contact for quote</span>
                                 </div>
                             </div>
 
@@ -654,10 +710,10 @@ function FeaturedTours() {
                                 </ul>
 
                                 <a
-                                    href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
+                                    href="/services"
                                     className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white py-3 rounded-xl font-semibold transition-all text-sm shadow-md"
                                 >
-                                    Book This Experience
+                                    Get a Quote
                                     <ArrowRight size={16} />
                                 </a>
                             </div>
@@ -704,9 +760,8 @@ function WinerySpotlight() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         </div>
-                        <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white px-6 py-3 rounded-2xl shadow-xl pulse-glow">
-                            <span className="text-2xl font-extrabold">$250</span>
-                            <span className="text-sm ml-1 opacity-80">per person</span>
+                        <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white px-5 py-2.5 rounded-2xl shadow-xl pulse-glow">
+                            <span className="text-sm font-bold">Contact for quote</span>
                         </div>
                     </motion.div>
 
@@ -722,11 +777,15 @@ function WinerySpotlight() {
                                 Estate Day Trip
                             </span>
                         </h2>
-                        <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
-                            An all inclusive 5 hour winery experience. From cellar door tastings
-                            to a seated lunch overlooking the vineyard, everything is taken care
-                            of so you can sit back and enjoy the day.
+                        <p className="text-gray-400 text-[15px] leading-relaxed mb-4">
+                            A 5 hour winery experience. From cellar door tastings
+                            to scenic vineyard views, enjoy a relaxing and memorable day out.
                         </p>
+                        <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl px-4 py-3 mb-8">
+                            <p className="text-amber-300 text-sm font-medium">
+                                ⚠️ Winery lunch and glass of wine are <span className="font-bold underline">optional add-ons</span> at additional cost and are not included in the base price.
+                            </p>
+                        </div>
 
                         <div className="space-y-3 mb-8">
                             {itinerary.map((item, i) => (
@@ -745,27 +804,30 @@ function WinerySpotlight() {
 
                         <div className="flex flex-wrap gap-3 mb-8">
                             {[
-                                "Return Transport",
-                                "Cellar Door Tasting",
-                                "Winery Lunch",
-                                "Glass of Wine",
-                                "Free Time to Explore",
-                            ].map((tag) => (
+                                { tag: "Return Transport", included: true },
+                                { tag: "Cellar Door Tasting", included: true },
+                                { tag: "Free Time to Explore", included: true },
+                                { tag: "Winery Lunch (Add-on)", included: false },
+                                { tag: "Glass of Wine (Add-on)", included: false },
+                            ].map((item) => (
                                 <span
-                                    key={tag}
-                                    className="text-xs font-semibold text-[var(--color-primary)] bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 px-3 py-1.5 rounded-full"
+                                    key={item.tag}
+                                    className={`text-xs font-semibold px-3 py-1.5 rounded-full border ${item.included
+                                        ? "text-[var(--color-primary)] bg-[var(--color-primary)]/10 border-[var(--color-primary)]/20"
+                                        : "text-amber-300 bg-amber-500/10 border-amber-500/20"
+                                        }`}
                                 >
-                                    {tag}
+                                    {item.tag}
                                 </span>
                             ))}
                         </div>
 
                         <a
-                            href="https://inclusivetransport.rezdy.com/catalog/641233/tours" target="_blank" rel="noopener noreferrer"
+                            href="/services"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-[var(--color-primary)]/20"
                         >
-                            <Calendar size={18} />
-                            Book This Tour
+                            <Mail size={18} />
+                            Get a Quote
                             <ArrowRight size={16} />
                         </a>
                     </motion.div>
@@ -896,166 +958,76 @@ function About() {
 }
 
 /* ═════════════════════════════
-   BOOKING SECTION
+   CONTACT CTA BANNER
    ═════════════════════════════ */
-function BookingSection() {
-    const [selectedService, setSelectedService] = useState("wine-tours");
-    const [selectedDate, setSelectedDate] = useState(15);
+function ContactCTA() {
+    const [copied, setCopied] = useState(false);
 
-    const serviceOptions = [
-        { id: "wine-tours", label: "Wine & Brewery Tours", price: "From $150pp" },
-        { id: "airport", label: "Airport Transfers", price: "From $90pp" },
-        { id: "blue-mountains", label: "Blue Mountains Day Trip", price: "From $199pp" },
-        { id: "winery-estate", label: "Crooked River Winery", price: "$250pp" },
-        { id: "group", label: "Group Transport", price: "Custom Quote" },
-        { id: "ndis", label: "NDIS Transport", price: "NDIS Funded" },
-    ];
-
-    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    const calendarDays = Array.from({ length: 35 }, (_, i) => {
-        const day = i - 2;
-        return day > 0 && day <= 28 ? day : null;
-    });
+    const copyEmail = () => {
+        navigator.clipboard.writeText("bennibrown.bb@gmail.com");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
     return (
-        <AnimatedSection id="booking" className="py-12 sm:py-16 px-6 bg-white">
-            <div className="max-w-7xl mx-auto">
-                <motion.div variants={fadeUp} className="text-center mb-16">
-                    <p className="text-xs uppercase tracking-[2px] text-[var(--color-primary-deeper)] font-bold mb-3">
-                        Ready to Go?
-                    </p>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--color-text)] mb-4">
-                        Book Your Experience
-                    </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                        Pick your service, choose a date, and lock it in. Easy online booking
-                        so you can plan your trip in minutes.
-                    </p>
-                </motion.div>
+        <AnimatedSection id="booking" className="py-16 sm:py-24 px-6" style={{ background: '#142524' }}>
+            <div className="max-w-4xl mx-auto text-center relative">
+                {/* Decorative glows */}
+                <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[var(--color-primary)]/10 blur-[100px]" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-[var(--color-primary-dark)]/10 blur-[80px]" />
 
-                <motion.div
-                    variants={fadeUp}
-                    className="max-w-4xl mx-auto bg-white rounded-3xl border border-[var(--color-border)] shadow-2xl shadow-black/5 overflow-hidden"
-                >
-                    {/* Header */}
-                    <div className="bg-[var(--color-accent)] px-8 py-5 flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                            <Image
-                                src="/images/logo-white.png"
-                                alt="Logo"
-                                width={28}
-                                height={28}
-                            />
-                            <span className="text-white font-bold text-sm">
-                                Inclusive Ability Support
-                            </span>
-                        </div>
-                        <span className="text-[var(--color-primary)] text-sm font-medium">
-                            Live Booking
+                <motion.div variants={fadeUp} className="relative">
+                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/20 text-[var(--color-primary)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <Phone size={14} />
+                        Book by Phone or Email
+                    </div>
+
+                    <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
+                        Ready to{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]">
+                            Get Moving?
                         </span>
+                    </h2>
+
+                    <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                        Contact Beni directly to discuss your transport needs, get a custom quote, and lock in your booking.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                        <a
+                            href="/services"
+                            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-[var(--color-primary)]/30 hover:shadow-2xl shimmer-effect"
+                        >
+                            <Compass size={18} />
+                            Explore Our Services
+                            <ArrowRight size={16} />
+                        </a>
+                        <a
+                            href="tel:0402503701"
+                            className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/25 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
+                        >
+                            <Phone size={18} />
+                            0402 503 701
+                        </a>
                     </div>
 
-                    <div className="p-8">
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {/* Service Selection */}
-                            <div>
-                                <h3 className="text-sm font-bold text-[var(--color-text)] mb-4 uppercase tracking-wider">
-                                    Select Your Service
-                                </h3>
-                                <div className="space-y-2.5">
-                                    {serviceOptions.map((s) => (
-                                        <button
-                                            key={s.id}
-                                            onClick={() => setSelectedService(s.id)}
-                                            className={`w-full text-left px-4 py-3.5 rounded-xl border transition-all flex justify-between items-center ${selectedService === s.id
-                                                ? "border-[var(--color-primary)] bg-[var(--color-primary-light)] text-[var(--color-primary-deeper)]"
-                                                : "border-[var(--color-border)] hover:border-[var(--color-primary)]/30 text-[var(--color-text-secondary)]"
-                                                }`}
-                                        >
-                                            <span className="font-medium text-sm">{s.label}</span>
-                                            <span
-                                                className={`text-xs font-bold ${selectedService === s.id
-                                                    ? "text-[var(--color-primary-deeper)]"
-                                                    : "text-[var(--color-text-muted)]"
-                                                    }`}
-                                            >
-                                                {s.price}
-                                            </span>
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Calendar */}
-                            <div>
-                                <h3 className="text-sm font-bold text-[var(--color-text)] mb-4 uppercase tracking-wider">
-                                    Choose a Date
-                                </h3>
-                                <div className="bg-[var(--color-surface-alt)] rounded-2xl p-5 border border-[var(--color-border)]">
-                                    <div className="flex justify-between items-center mb-4">
-                                        <span className="font-bold text-[var(--color-text)]">
-                                            March 2026
-                                        </span>
-                                        <div className="flex gap-1.5">
-                                            <button className="w-7 h-7 rounded-lg border border-[var(--color-border)] flex items-center justify-center text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
-                                                ‹
-                                            </button>
-                                            <button className="w-7 h-7 rounded-lg border border-[var(--color-border)] flex items-center justify-center text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
-                                                ›
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div className="calendar-grid mb-2">
-                                        {days.map((d) => (
-                                            <div
-                                                key={d}
-                                                className="text-center text-[11px] font-semibold text-[var(--color-text-muted)] py-2 uppercase tracking-wider"
-                                            >
-                                                {d}
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="calendar-grid">
-                                        {calendarDays.map((day, i) => (
-                                            <div
-                                                key={i}
-                                                onClick={() => day && setSelectedDate(day)}
-                                                className={`calendar-day ${day === selectedDate ? "selected" : ""
-                                                    } ${!day ? "empty" : ""}`}
-                                            >
-                                                {day || ""}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <a
-                                    href="https://inclusivetransport.rezdy.com/catalog/641233/tours"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white py-3.5 rounded-xl font-bold text-sm transition-all text-center"
-                                >
-                                    Continue Booking →
-                                </a>
-                            </div>
-                        </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a
+                            href="mailto:bennibrown.bb@gmail.com"
+                            className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-light)] transition-colors font-medium"
+                        >
+                            <Mail size={16} />
+                            bennibrown.bb@gmail.com
+                        </a>
+                        <button
+                            onClick={copyEmail}
+                            className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/25"
+                        >
+                            <Copy size={14} />
+                            {copied ? "Copied!" : "Copy email"}
+                        </button>
                     </div>
                 </motion.div>
-
-                <motion.p
-                    variants={fadeIn}
-                    className="text-center mt-8 text-sm text-[var(--color-text-muted)]"
-                >
-                    Prefer to book by phone?{" "}
-                    <a
-                        href="tel:0402503701"
-                        className="text-[var(--color-primary-deeper)] font-semibold hover:underline"
-                    >
-                        Call 0402 503 701
-                    </a>
-                </motion.p>
             </div>
         </AnimatedSection>
     );
@@ -1103,10 +1075,10 @@ function Footer() {
                         </h3>
                         <div className="space-y-3">
                             {[
+                                { label: "Our Services", href: "/services" },
                                 { label: "Wine & Brewery Tours", href: "#tours" },
                                 { label: "Airport Transfers", href: "#services" },
-                                { label: "Blue Mountains Day Trips", href: "#tours" },
-                                { label: "Book Online", href: "#booking" },
+                                { label: "NDIS Transport", href: "/services" },
                                 { label: "Contact Us", href: "#contact" },
                             ].map((link) => (
                                 <a
@@ -1184,7 +1156,7 @@ export default function Home() {
             <FeaturedTours />
             <WinerySpotlight />
             <About />
-            <BookingSection />
+            <ContactCTA />
             <Footer />
         </>
     );
