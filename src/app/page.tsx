@@ -20,7 +20,6 @@ import {
     Menu,
     X,
     Heart,
-    Compass,
     Sparkles,
     ArrowRight,
     CheckCircle,
@@ -591,139 +590,6 @@ function Services() {
     );
 }
 
-/* ═════════════════════════════
-   FEATURED TOURS
-   ═════════════════════════════ */
-function FeaturedTours() {
-    const tours = [
-        {
-            image: "/images/ndis-van.jpeg",
-            title: "NDIS Transport",
-            subtitle: "Community & Appointments",
-            color: "from-rose-500 to-pink-600",
-            features: [
-                "Reliable transport for NDIS participants",
-                "Appointments and community activities",
-                "In line with NDIS pricing guidelines",
-                "Comfortable, accessible vehicle",
-            ],
-        },
-        {
-            image: "/images/wine-tours.jpeg",
-            title: "Wine & Brewery Tours",
-            subtitle: "Full & Half Day",
-            color: "from-purple-500 to-violet-600",
-            features: [
-                "Cellar door wine tasting",
-                "Scenic coastal and country drives",
-                "Multiple winery and brewery stops",
-                "Small group, comfortable travel",
-            ],
-        },
-        {
-            image: "/images/blue-mountains.jpeg",
-            title: "Blue Mountains Reset Day",
-            subtitle: "Full Day Experience",
-            color: "from-emerald-500 to-teal-600",
-            features: [
-                "Scenic lookouts and grounding stops",
-                "Guided bush walk through nature",
-                "Cafe lunch in Leura or Katoomba",
-                "Village stroll through shops and gardens",
-            ],
-        },
-        {
-            image: "/images/airport-transfer.jpeg",
-            title: "Airport Transfers",
-            subtitle: "Door to Door",
-            color: "from-blue-500 to-indigo-600",
-            features: [
-                "All major airports covered",
-                "Reliable pickup and drop off",
-                "Flight tracking for peace of mind",
-                "Comfortable group vehicle",
-            ],
-        },
-    ];
-
-    return (
-        <AnimatedSection id="tours" className="py-12 sm:py-16 px-6 bg-gradient-to-b from-white to-[var(--color-surface-alt)] relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[var(--color-primary)]/5 blur-[100px]" />
-
-            <div className="max-w-7xl mx-auto relative">
-                <motion.div variants={fadeUp} className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/10 text-[var(--color-primary-deeper)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                        <Compass size={14} />
-                        Featured Experiences
-                    </div>
-                    <h2 className="text-3xl sm:text-5xl font-extrabold text-[var(--color-text)] mb-4">
-                        Popular Tours &{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-deeper)]">
-                            Transfers
-                        </span>
-                    </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-                        Explore some of the most popular packages. Every trip is fully catered
-                        with comfortable transport and a personal touch.
-                    </p>
-                </motion.div>
-
-                <div className="grid lg:grid-cols-3 gap-8">
-                    {tours.map((tour) => (
-                        <motion.div
-                            key={tour.title}
-                            variants={fadeUp}
-                            whileHover={{ y: -6 }}
-                            className="bg-white rounded-2xl border border-[var(--color-border)] overflow-hidden hover:shadow-2xl hover:shadow-[var(--color-primary)]/10 transition-all duration-300 group"
-                        >
-                            <div className="relative h-56 overflow-hidden">
-                                <Image
-                                    src={tour.image}
-                                    alt={tour.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                <div className={`absolute top-3 right-3 bg-gradient-to-r ${tour.color} px-2.5 py-1 rounded-full shadow-lg`}>
-                                    <span className="text-[11px] font-bold text-white">Contact for quote</span>
-                                </div>
-                            </div>
-
-                            <div className="p-6">
-                                <p className="text-xs uppercase tracking-wider text-[var(--color-primary-dark)] font-semibold mb-1">
-                                    {tour.subtitle}
-                                </p>
-                                <h3 className="text-xl font-bold text-[var(--color-text)] mb-4">
-                                    {tour.title}
-                                </h3>
-
-                                <ul className="space-y-2.5 mb-6">
-                                    {tour.features.map((f) => (
-                                        <li
-                                            key={f}
-                                            className="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]"
-                                        >
-                                            <CheckCircle size={16} className="text-[var(--color-primary)] mt-0.5 shrink-0" />
-                                            {f}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <a
-                                    href="/services"
-                                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white py-3 rounded-xl font-semibold transition-all text-sm shadow-md"
-                                >
-                                    Get a Quote
-                                    <ArrowRight size={16} />
-                                </a>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </AnimatedSection>
-    );
-}
 
 /* ═════════════════════════════
    WINERY SPOTLIGHT
@@ -998,7 +864,7 @@ function ContactCTA() {
                             href="/services"
                             className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-[var(--color-primary)]/30 hover:shadow-2xl shimmer-effect"
                         >
-                            <Compass size={18} />
+                            <Sparkles size={18} />
                             Explore Our Services
                             <ArrowRight size={16} />
                         </a>
@@ -1153,7 +1019,6 @@ export default function Home() {
             <Navbar />
             <Hero />
             <Services />
-            <FeaturedTours />
             <WinerySpotlight />
             <About />
             <ContactCTA />

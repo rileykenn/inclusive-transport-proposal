@@ -284,7 +284,7 @@ export default function ServicesPage() {
             </motion.div>
 
             {/* Bottom CTA */}
-            <div className="py-16 px-6 text-center" style={{ background: '#142524' }}>
+            <div className="py-12 px-6 text-center" style={{ background: '#142524' }}>
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
                         Ready to Book?
