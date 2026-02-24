@@ -222,11 +222,11 @@ function Hero() {
     const heroImages = [
         { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers" },
         { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours" },
-        { src: "/images/ndis-van.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport" },
+        { src: "/images/ndis.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport" },
     ];
 
     return (
-        <section className="relative pt-[72px] overflow-hidden" style={{ background: '#142524' }}>
+        <section className="relative pt-[72px] overflow-hidden" style={{ background: '#74d4cf' }}>
             {/* Subtle floating orbs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[var(--color-primary)]/8 blur-3xl float-animation" />
@@ -275,19 +275,19 @@ function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/15 text-[var(--color-primary-light)] px-5 py-2.5 rounded-full text-sm font-semibold mb-6 border border-[var(--color-primary)]/25">
+                        <div className="inline-flex items-center gap-2 bg-white/25 text-[#0a1f1e] px-5 py-2.5 rounded-full text-sm font-semibold mb-6 border border-white/40">
                             <Sparkles size={16} />
                             Premium 12 Seater Transport
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6">
+                        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0a1f1e] leading-[1.1] mb-4 sm:mb-6">
                             Your Journey,{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]">
+                            <span className="text-white">
                                 Our Priority
                             </span>
                         </h1>
 
-                        <p className="text-base sm:text-xl text-white/75 leading-relaxed mb-6 sm:mb-10 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-xl text-[#0a1f1e]/75 leading-relaxed mb-6 sm:mb-10 max-w-2xl mx-auto">
                             Book our premium, reliable 12 seater transport for NDIS customers, airport
                             transfers, winery tours, Blue Mountain escapes and more. Travel comfortably
                             and stress free with our professional service.
@@ -304,7 +304,7 @@ function Hero() {
                             </a>
                             <a
                                 href="tel:0402503701"
-                                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/25 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-white px-8 py-4 rounded-full text-base font-bold transition-all"
+                                className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm border-2 border-white/40 hover:border-white hover:bg-white/30 text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all"
                             >
                                 <Phone size={18} />
                                 0402 503 701
@@ -445,7 +445,7 @@ function Hero() {
 function Services() {
     const services = [
         {
-            image: "/images/ndis-van.jpeg",
+            image: "/images/ndis.jpeg",
             title: "NDIS Transport Services",
             subtitle: "Community & Appointments",
             color: "from-rose-500 to-pink-600",
@@ -493,7 +493,7 @@ function Services() {
             ],
         },
         {
-            image: "/images/hero-transport.jpg",
+            image: "/images/corpreteevents.jpeg",
             title: "Corporate Transport",
             subtitle: "Events & Team Building",
             color: "from-amber-500 to-orange-600",
@@ -830,7 +830,7 @@ function ContactCTA() {
     const [copied, setCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText("bennibrown.bb@gmail.com");
+        navigator.clipboard.writeText("beni@inclusivetransport.com.au");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -879,11 +879,11 @@ function ContactCTA() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
-                            href="mailto:bennibrown.bb@gmail.com"
+                            href="mailto:beni@inclusivetransport.com.au"
                             className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-light)] transition-colors font-medium"
                         >
                             <Mail size={16} />
-                            bennibrown.bb@gmail.com
+                            beni@inclusivetransport.com.au
                         </a>
                         <button
                             onClick={copyEmail}
@@ -972,11 +972,11 @@ function Footer() {
                                 0402 503 701
                             </a>
                             <a
-                                href="mailto:bennibrown.bb@gmail.com"
+                                href="mailto:beni@inclusivetransport.com.au"
                                 className="flex items-center gap-3 text-sm text-gray-400 hover:text-[var(--color-primary)] transition-colors"
                             >
                                 <Mail size={16} className="text-[var(--color-primary)]" />
-                                bennibrown.bb@gmail.com
+                                beni@inclusivetransport.com.au
                             </a>
                             <div className="flex items-center gap-3 text-sm text-gray-400">
                                 <MapPin size={16} className="text-[var(--color-primary)]" />

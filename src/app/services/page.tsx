@@ -30,7 +30,7 @@ const stagger = {
 const services = [
     {
         icon: Heart,
-        image: "/images/ndis-van.jpeg",
+        image: "/images/ndis.jpeg",
         title: "NDIS Transport Services",
         description:
             "Reliable, comfortable transport for NDIS participants. We provide door to door transport for appointments, community activities, social outings, and more. All services are in line with NDIS pricing guidelines.",
@@ -94,7 +94,7 @@ const services = [
     },
     {
         icon: Briefcase,
-        image: "/images/hero-transport.jpg",
+        image: "/images/corpreteevents.jpeg",
         title: "Corporate Transport",
         description:
             "Transport for corporate retreats, conferences, team building days, and off-site events. Flexible scheduling with custom routes and timing.",
@@ -130,7 +130,7 @@ export default function ServicesPage() {
     const [copied, setCopied] = useState(false);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText("bennibrown.bb@gmail.com");
+        navigator.clipboard.writeText("beni@inclusivetransport.com.au");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -138,7 +138,7 @@ export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* Header */}
-            <div style={{ background: '#142524' }} className="pt-8 pb-16 px-6">
+            <div style={{ background: '#74d4cf' }} className="pt-8 pb-16 px-6">
                 <div className="max-w-5xl mx-auto">
                     <a
                         href="/"
@@ -154,40 +154,40 @@ export default function ServicesPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center"
                     >
-                        <div className="inline-flex items-center gap-2 bg-[var(--color-primary)]/20 text-[var(--color-primary)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-2 bg-white/25 text-[#0a1f1e] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                             <Sparkles size={14} />
                             Our Services
                         </div>
-                        <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
+                        <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0a1f1e] mb-4">
                             Book by{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]">
+                            <span className="text-white">
                                 Phone or Email
                             </span>
                         </h1>
-                        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                        <p className="text-lg text-[#0a1f1e]/70 max-w-2xl mx-auto mb-8">
                             Browse our services below and contact Beni directly to get a custom quote and secure your booking.
                         </p>
 
                         {/* Contact bar */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 max-w-xl mx-auto">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white/20 border border-white/30 rounded-2xl p-5 max-w-xl mx-auto">
                             <a
                                 href="tel:0402503701"
-                                className="inline-flex items-center gap-2 text-white font-bold hover:text-[var(--color-primary)] transition-colors"
+                                className="inline-flex items-center gap-2 text-[#0a1f1e] font-bold hover:text-white transition-colors"
                             >
-                                <Phone size={18} className="text-[var(--color-primary)]" />
+                                <Phone size={18} className="text-[#0a1f1e]" />
                                 0402 503 701
                             </a>
-                            <span className="hidden sm:block text-white/20">|</span>
+                            <span className="hidden sm:block text-[#0a1f1e]/20">|</span>
                             <a
-                                href="mailto:bennibrown.bb@gmail.com"
-                                className="inline-flex items-center gap-2 text-white font-bold hover:text-[var(--color-primary)] transition-colors"
+                                href="mailto:beni@inclusivetransport.com.au"
+                                className="inline-flex items-center gap-2 text-[#0a1f1e] font-bold hover:text-white transition-colors"
                             >
-                                <Mail size={18} className="text-[var(--color-primary)]" />
-                                bennibrown.bb@gmail.com
+                                <Mail size={18} className="text-[#0a1f1e]" />
+                                beni@inclusivetransport.com.au
                             </a>
                             <button
                                 onClick={copyEmail}
-                                className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/25"
+                                className="inline-flex items-center gap-1.5 text-xs text-[#0a1f1e]/60 hover:text-[#0a1f1e] transition-colors bg-white/15 px-3 py-1.5 rounded-full border border-white/25 hover:border-white/50"
                             >
                                 <Copy size={12} />
                                 {copied ? "Copied!" : "Copy email"}
@@ -261,11 +261,11 @@ export default function ServicesPage() {
                                                 0402 503 701
                                             </a>
                                             <a
-                                                href="mailto:bennibrown.bb@gmail.com"
+                                                href="mailto:beni@inclusivetransport.com.au"
                                                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary-deeper)] hover:text-[var(--color-primary)] transition-colors"
                                             >
                                                 <Mail size={14} />
-                                                bennibrown.bb@gmail.com
+                                                beni@inclusivetransport.com.au
                                             </a>
                                             <button
                                                 onClick={copyEmail}
@@ -284,12 +284,12 @@ export default function ServicesPage() {
             </motion.div>
 
             {/* Bottom CTA */}
-            <div className="py-12 px-6 text-center" style={{ background: '#142524' }}>
+            <div className="py-12 px-6 text-center" style={{ background: '#74d4cf' }}>
                 <div className="max-w-2xl mx-auto">
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1f1e] mb-4">
                         Ready to Book?
                     </h2>
-                    <p className="text-gray-400 mb-8">
+                    <p className="text-[#0a1f1e]/70 mb-8">
                         Get in touch with Beni to discuss your needs, get a quote, and lock in your transport.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -301,8 +301,8 @@ export default function ServicesPage() {
                             Call 0402 503 701
                         </a>
                         <a
-                            href="mailto:bennibrown.bb@gmail.com"
-                            className="inline-flex items-center gap-2 bg-white/10 border-2 border-white/25 hover:border-[var(--color-primary)] text-white px-8 py-4 rounded-full font-bold transition-all"
+                            href="mailto:beni@inclusivetransport.com.au"
+                            className="inline-flex items-center gap-2 bg-white/20 border-2 border-white/40 hover:border-white text-[#0a1f1e] px-8 py-4 rounded-full font-bold transition-all"
                         >
                             <Mail size={18} />
                             Email Beni
@@ -310,7 +310,7 @@ export default function ServicesPage() {
                     </div>
                     <button
                         onClick={copyEmail}
-                        className="mt-4 inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#0a1f1e]/60 hover:text-[#0a1f1e] transition-colors"
                     >
                         <Copy size={14} />
                         {copied ? "Email copied!" : "Click to copy email address"}
