@@ -317,7 +317,7 @@ function Hero() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10 pt-8 border-t border-white/15"
+                        className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10 pt-8 border-t border-[#0a1f1e]/15"
                     >
                         {[
                             { icon: Shield, text: "Fully Insured" },
@@ -326,9 +326,9 @@ function Hero() {
                         ].map((badge) => (
                             <div
                                 key={badge.text}
-                                className="flex items-center gap-2 text-sm text-white/70"
+                                className="flex items-center gap-2 text-sm text-[#0a1f1e]/70"
                             >
-                                <badge.icon size={16} className="text-[var(--color-primary)]" />
+                                <badge.icon size={16} className="text-[#0a1f1e]" />
                                 <span className="font-medium">{badge.text}</span>
                             </div>
                         ))}
@@ -336,7 +336,7 @@ function Hero() {
                             href="https://www.instagram.com/inclusive_transport_services/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-white/70 hover:text-[var(--color-primary)] transition-colors"
+                            className="flex items-center gap-2 text-sm text-[#0a1f1e]/70 hover:text-[#0a1f1e] transition-colors"
                         >
                             <Instagram size={16} />
                             <span className="font-medium">Follow us</span>
