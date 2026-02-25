@@ -30,9 +30,9 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "https://inclusivetransport.com.au/images/logo-blue.png",
-                width: 512,
-                height: 512,
+                url: "https://inclusivetransport.com.au/images/og-image.png",
+                width: 1200,
+                height: 630,
                 alt: "Inclusive Ability Support Logo",
             },
         ],
