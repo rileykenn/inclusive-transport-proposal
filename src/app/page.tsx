@@ -275,7 +275,7 @@ function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-white/25 text-[#0a1f1e] px-5 py-2.5 rounded-full text-sm font-semibold mb-6 border border-white/40">
+                        <div className="inline-flex items-center gap-2 bg-[#c8cbcc] text-[#0a1f1e] px-5 py-2.5 rounded-full text-sm font-semibold mb-6">
                             <Sparkles size={16} />
                             Premium 12 Seater Transport
                         </div>
@@ -296,7 +296,7 @@ function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/services"
-                                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] hover:from-[var(--color-primary-dark)] hover:to-[var(--color-primary-deeper)] text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-[var(--color-primary)]/30 hover:shadow-2xl hover:shadow-[var(--color-primary)]/40 shimmer-effect"
+                                className="inline-flex items-center justify-center gap-2 bg-[#c8cbcc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-black/10 hover:shadow-2xl"
                             >
                                 <Calendar size={18} />
                                 Book Your Ride
@@ -304,7 +304,7 @@ function Hero() {
                             </a>
                             <a
                                 href="tel:0402503701"
-                                className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm border-2 border-white/40 hover:border-white hover:bg-white/30 text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all"
+                                className="inline-flex items-center justify-center gap-2 bg-[#c8cbcc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg shadow-black/10"
                             >
                                 <Phone size={18} />
                                 0402 503 701
