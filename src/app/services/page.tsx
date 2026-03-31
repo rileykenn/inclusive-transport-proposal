@@ -321,7 +321,7 @@ export default function ServicesPage() {
             {/* Footer credit */}
             <div className="bg-[var(--color-accent)] py-6 px-6 text-center border-t border-white/10">
                 <p className="text-sm text-gray-500">
-                    © 2026 Inclusive Ability Support. All rights reserved.
+                    © 2026 Inclusive Transport. All rights reserved.
                 </p>
                 <p className="text-sm text-gray-500 mt-1">
                     Website designed and developed by{" "}

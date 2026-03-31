@@ -105,8 +105,8 @@ function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-white/95 backdrop-blur-md shadow-lg shadow-black/5"
-                : "bg-white/90 backdrop-blur-md"
+                ? "bg-[#d8dadc] backdrop-blur-md shadow-lg shadow-black/5"
+                : "bg-[#d8dadc] backdrop-blur-md"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
@@ -114,14 +114,14 @@ function Navbar() {
                 <a href="#" className="flex items-center gap-3">
                     <Image
                         src="/images/logo-blue.png"
-                        alt="Inclusive Ability Support"
+                        alt="Inclusive Transport"
                         width={40}
                         height={40}
                         className="w-10 h-10"
                     />
                     <div>
                         <span className="text-sm sm:text-base font-bold text-[var(--color-text)] leading-tight block">
-                            Inclusive Ability Support
+                            Inclusive Transport
                         </span>
                         <span className="text-[10px] sm:text-[11px] uppercase tracking-[1.5px] text-[var(--color-primary-deeper)] font-semibold">
                             by Beni Brown
@@ -275,7 +275,7 @@ function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-[#c8cbcc] text-[#0a1f1e] px-5 py-2.5 rounded-full text-sm font-semibold mb-6">
+                        <div className="inline-flex items-center gap-2 bg-[#d8dadc] text-[#0a1f1e] px-5 py-2.5 rounded-full text-sm font-semibold mb-6">
                             <Sparkles size={16} />
                             Premium 12 Seater Transport
                         </div>
@@ -296,7 +296,7 @@ function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/services"
-                                className="inline-flex items-center justify-center gap-2 bg-[#c8cbcc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-black/10 hover:shadow-2xl"
+                                className="inline-flex items-center justify-center gap-2 bg-[#d8dadc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-black/10 hover:shadow-2xl"
                             >
                                 <Calendar size={18} />
                                 Book Your Ride
@@ -304,7 +304,7 @@ function Hero() {
                             </a>
                             <a
                                 href="tel:0402503701"
-                                className="inline-flex items-center justify-center gap-2 bg-[#c8cbcc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg shadow-black/10"
+                                className="inline-flex items-center justify-center gap-2 bg-[#d8dadc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg shadow-black/10"
                             >
                                 <Phone size={18} />
                                 0402 503 701
@@ -756,7 +756,7 @@ function About() {
                             </span>
                         </h2>
                         <p className="text-[var(--color-text-secondary)] leading-relaxed mb-10">
-                            Inclusive Ability Support is about more than getting from A to B. It
+                            Inclusive Transport is about more than getting from A to B. It
                             is about making the journey something you actually look forward to.
                             Whether it is a winery tour, an airport transfer, or a day trip to
                             the Blue Mountains, every ride is comfortable, professional, and
@@ -915,7 +915,7 @@ function Footer() {
                         <div className="flex items-center gap-3 mb-4">
                             <Image
                                 src="/images/logo-white.png"
-                                alt="Inclusive Ability Support"
+                                alt="Inclusive Transport"
                                 width={36}
                                 height={36}
                             />
@@ -991,7 +991,7 @@ function Footer() {
                     className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
                 >
                     <p className="text-sm text-gray-500">
-                        © 2026 Inclusive Ability Support. All rights reserved.
+                        © 2026 Inclusive Transport. All rights reserved.
                     </p>
                     <p className="text-sm text-gray-500">
                         Website designed and developed by{" "}

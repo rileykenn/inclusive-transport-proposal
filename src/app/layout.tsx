@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Inclusive Ability Support | Transport, Tours & Airport Transfers",
+    title: "Inclusive Transport | Transport, Tours & Airport Transfers",
     description:
         "Professional transport services including wine tours, airport transfers, Blue Mountains day trips, and NDIS transport. Fully insured, group transport specialists based in Australia.",
     keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         "inclusive ability support",
     ],
     openGraph: {
-        title: "Inclusive Ability Support | Transport, Tours & Airport Transfers",
+        title: "Inclusive Transport | Transport, Tours & Airport Transfers",
         description:
             "Professional transport services including wine tours, airport transfers, Blue Mountains day trips, and NDIS transport.",
         url: "https://inclusivetransport.com.au",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
                 url: "https://inclusivetransport.com.au/images/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Inclusive Ability Support Logo",
+                alt: "Inclusive Transport Logo",
             },
         ],
     },
