@@ -220,9 +220,9 @@ function Hero() {
     }, [reviews.length]);
 
     const heroImages = [
-        { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers" },
-        { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours" },
-        { src: "/images/ndis.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport" },
+        { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers", position: "" },
+        { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours", position: "" },
+        { src: "/images/newphoto2.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport", position: "object-top" },
     ];
 
     return (
@@ -234,19 +234,46 @@ function Hero() {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 sm:pb-16">
-                {/* 3 Images */}
+                {/* Large Showcase Image */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="grid grid-cols-3 gap-2 sm:gap-5 pt-6 sm:pt-10"
+                    className="pt-6 sm:pt-10 mb-4 sm:mb-5"
+                >
+                    <div className="relative w-full aspect-[16/7] sm:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border-2 border-white/15 group">
+                        <Image
+                            src="/images/newphoto1.jpeg"
+                            alt="Happy customers with Inclusive Transport van"
+                            fill
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
+                            <p className="text-white font-extrabold text-sm sm:text-lg md:text-2xl drop-shadow-lg">
+                                Real People. Real Journeys.
+                            </p>
+                            <p className="text-white/70 text-xs sm:text-sm mt-1 drop-shadow-md">
+                                Group transport made easy — tours, events, and more
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* 3 Service Images */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="grid grid-cols-3 gap-2 sm:gap-5"
                 >
                     {heroImages.map((img, i) => (
                         <motion.div
                             key={img.label}
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+                            transition={{ duration: 0.6, delay: 0.4 + i * 0.15 }}
                             className="relative group cursor-pointer"
                         >
                             <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/30 border-2 border-white/10 group-hover:border-[var(--color-primary)]/50 transition-all duration-500">
@@ -254,7 +281,7 @@ function Hero() {
                                     src={img.src}
                                     alt={img.alt}
                                     fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className={`object-cover group-hover:scale-110 transition-transform duration-700 ${img.position}`}
                                     priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -281,16 +308,17 @@ function Hero() {
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0a1f1e] leading-[1.1] mb-4 sm:mb-6">
-                            Your Journey,{" "}
+                            Your Trusted{" "}
                             <span className="text-white">
-                                Our Priority
+                                Transport Partner
                             </span>
                         </h1>
 
                         <p className="text-base sm:text-xl text-[#0a1f1e]/75 leading-relaxed mb-6 sm:mb-10 max-w-2xl mx-auto">
-                            Book our premium, reliable 12 seater transport for NDIS customers, airport
-                            transfers, winery tours, Blue Mountain escapes and more. Travel comfortably
-                            and stress free with our professional service.
+                            From NDIS services, inclusive day clinics, corporate outings, airport transfers
+                            to winery tours and Blue Mountains escapes, we deliver safe, comfortable, and
+                            reliable group transport. Book with confidence and travel stress free, let us
+                            plan your next adventure.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -299,7 +327,7 @@ function Hero() {
                                 className="inline-flex items-center justify-center gap-2 bg-[#d8dadc] hover:bg-[#b8bbbf] text-[#0a1f1e] px-8 py-4 rounded-full text-base font-bold transition-all shadow-xl shadow-black/10 hover:shadow-2xl"
                             >
                                 <Calendar size={18} />
-                                Book Your Ride
+                                Plan Your Next Adventure
                                 <ArrowRight size={16} />
                             </a>
                             <a
@@ -445,7 +473,7 @@ function Hero() {
 function Services() {
     const services = [
         {
-            image: "/images/ndis.jpeg",
+            image: "/images/newphoto2.jpeg",
             title: "NDIS Transport Services",
             subtitle: "Community & Appointments",
             color: "from-rose-500 to-pink-600",
@@ -482,14 +510,14 @@ function Services() {
         },
         {
             image: "/images/airport-transfer.jpeg",
-            title: "Airport Transfers",
+            title: "Airport & Cruise Transfers",
             subtitle: "Door to Door",
             color: "from-blue-500 to-indigo-600",
             features: [
-                "All major airports covered",
-                "Reliable pickup and drop off",
-                "Flight tracking for peace of mind",
-                "Comfortable group vehicle",
+                "2 pax — $270",
+                "3–4 pax — $300",
+                "4–11 pax — $400",
+                "All major airports and cruise terminals",
             ],
         },
         {
@@ -546,7 +574,7 @@ function Services() {
                                     src={service.image}
                                     alt={service.title}
                                     fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                    className={`object-cover group-hover:scale-110 transition-transform duration-500 ${service.image.includes('newphoto2') ? 'object-top' : ''}`}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                                 <div className={`absolute top-3 right-3 bg-gradient-to-r ${service.color} px-2.5 py-1 rounded-full shadow-lg`}>
@@ -615,9 +643,9 @@ function WinerySpotlight() {
 
             <div className="max-w-7xl mx-auto relative">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Image */}
-                    <motion.div variants={fadeUp} className="relative">
-                        <div className="relative h-[500px] rounded-2xl overflow-hidden group">
+                    {/* Images — Van + Wine Tour Flyer */}
+                    <motion.div variants={fadeUp} className="space-y-5">
+                        <div className="relative h-[280px] rounded-2xl overflow-hidden group">
                             <Image
                                 src="/images/winery-van.jpeg"
                                 alt="Inclusive Transport at Crooked River Winery"
@@ -626,8 +654,14 @@ function WinerySpotlight() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         </div>
-                        <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white px-5 py-2.5 rounded-2xl shadow-xl pulse-glow">
-                            <span className="text-sm font-bold">Contact for quote</span>
+                        <div className="relative rounded-2xl overflow-hidden group shadow-2xl shadow-black/30 border border-white/10">
+                            <Image
+                                src="/images/newphoto3.jpeg"
+                                alt="Boutique South Coast Wine Tour Experience — Crooked River Estate, Silos Estate, Two Figs Winery"
+                                width={600}
+                                height={800}
+                                className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-700"
+                            />
                         </div>
                     </motion.div>
 

@@ -30,7 +30,7 @@ const stagger = {
 const services = [
     {
         icon: Heart,
-        image: "/images/ndis.jpeg",
+        image: "/images/newphoto2.jpeg",
         title: "NDIS Transport Services",
         description:
             "Reliable, comfortable transport for NDIS participants. We provide door to door transport for appointments, community activities, social outings, and more. All services are in line with NDIS pricing guidelines.",
@@ -79,15 +79,15 @@ const services = [
     {
         icon: Plane,
         image: "/images/airport-transfer.jpeg",
-        title: "Airport Transfers",
+        title: "Airport & Cruise Transfers",
         description:
-            "Door to door airport pick up or drop off for individuals and groups. Reliable, on time service with flight tracking so you never have to worry.",
+            "Door to door airport or cruise terminal pick up and drop off for individuals and groups. Reliable, on time service with flight tracking so you never have to worry.",
         features: [
-            "All major airports covered",
+            "2 pax — $270",
+            "3–4 pax — $300",
+            "4–11 pax — $400",
+            "All major airports and cruise terminals",
             "Reliable pickup and drop off",
-            "Flight tracking for peace of mind",
-            "Comfortable group vehicle",
-            "Individual or group transfers",
             "Early morning and late night available",
         ],
         gradient: "from-blue-500 to-indigo-600",
@@ -218,7 +218,7 @@ export default function ServicesPage() {
                                         src={service.image}
                                         alt={service.title}
                                         fill
-                                        className="object-cover"
+                                        className={`object-cover ${service.image.includes('newphoto2') ? 'object-top' : ''}`}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 md:bg-gradient-to-r md:from-transparent md:to-white/20" />
                                     <div className={`absolute top-3 left-3 bg-gradient-to-r ${service.gradient} p-2.5 rounded-xl shadow-lg`}>
