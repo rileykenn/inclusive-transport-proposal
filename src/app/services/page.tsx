@@ -78,7 +78,7 @@ const services = [
     },
     {
         icon: Plane,
-        image: "/images/airport-transfer.jpeg",
+        image: "/images/airport29.jpeg",
         title: "Airport & Cruise Transfers",
         description:
             "Door to door airport or cruise terminal pick up and drop off for individuals and groups. Reliable, on time service with flight tracking so you never have to worry.",

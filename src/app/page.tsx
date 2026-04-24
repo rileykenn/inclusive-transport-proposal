@@ -220,7 +220,7 @@ function Hero() {
     }, [reviews.length]);
 
     const heroImages = [
-        { src: "/images/airport-transfer.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers", position: "" },
+        { src: "/images/airport29.jpeg", alt: "Airport Transfer Service", label: "Airport Transfers", position: "" },
         { src: "/images/wine-tours.jpeg", alt: "Winery Tours", label: "Wine & Brewery Tours", position: "" },
         { src: "/images/newphoto2.jpeg", alt: "NDIS Transport Service", label: "NDIS Transport", position: "object-top" },
     ];
@@ -509,7 +509,7 @@ function Services() {
             ],
         },
         {
-            image: "/images/airport-transfer.jpeg",
+            image: "/images/airport29.jpeg",
             title: "Airport & Cruise Transfers",
             subtitle: "Door to Door",
             color: "from-blue-500 to-indigo-600",
